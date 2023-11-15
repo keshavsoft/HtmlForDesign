@@ -15,8 +15,8 @@ let StartFunc = () => {
 let jVarLocalAlterClientName = ({ inmessage }) => {
 
     let LocalObjectToSend = {};
-    LocalObjectToSend.MessageType = "AlterClient";
-    LocalObjectToSend.JsonData = inmessage;
+    LocalObjectToSend.Type = "AlterClient";
+    LocalObjectToSend.UserName = inmessage;
     webSocket.send(JSON.stringify(LocalObjectToSend));
 }
 
