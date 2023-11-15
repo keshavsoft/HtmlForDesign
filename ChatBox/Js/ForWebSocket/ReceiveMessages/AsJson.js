@@ -1,8 +1,18 @@
 let StartFunc = ({ inJsonData }) => {
-    let jVarLocalJsonData = inJsonData.JsonData;
-    jVarLocalJsonData.forEach(element => {
-        showContent({ inMessage: element});
-    });
+
+    if (inJsonData.MessageType === "WSServer") {
+        let jVarLocalInputUserNameId = document.getElementById("InputUserNameId");
+        jVarLocalInputUserNameId.innerHTML = inJsonData.JsonData.UserName;
+    }
+    if (inJsonData.MessageType === "OnlineClients") {
+        let jVarLocalJsonData = inJsonData.JsonData;
+        let jVarLocalInboxId = document.getElementById("inbox_chat");
+        jVarLocalInboxId.innerHTML = "";
+        jVarLocalJsonData.forEach(element => {
+            showContent({ inMessage: element });
+        });
+    }
+
 };
 
 function showContent({ inMessage }) {
@@ -14,6 +24,7 @@ function showContent({ inMessage }) {
     jVarLocalClientNameId.innerHTML = inMessage.Name;
     let jVarLocalInboxId = document.getElementById("inbox_chat");
     jVarLocalInboxId.appendChild(clon);
+
 };
 
 export { StartFunc };

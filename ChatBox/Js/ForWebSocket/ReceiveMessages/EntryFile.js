@@ -1,21 +1,13 @@
 import { StartFunc as StartFuncAsJson } from "./AsJson.js";
-
-let jFLocalReceiveMessage = ({ inmessage }) => {
-    try {
-        let jVarLocalJsonData = JSON.parse(inmessage);
-        StartFuncAsJson({ inJsonData: jVarLocalJsonData });
-
-    } catch (error) {
-
-    }
-};
+import { StartFunc as StartFuncAsString } from "./AsString.js";
 
 let StartFunc = (event) => {
     try {
-        jFLocalReceiveMessage({ inmessage: event.data });
+        let jVarLocalJsonData = JSON.parse(event.data);
+        StartFuncAsJson({ inJsonData: jVarLocalJsonData });
        
     } catch (error) {
-
+        StartFuncAsString({ inStringData: event.data});
     }
 };
 
