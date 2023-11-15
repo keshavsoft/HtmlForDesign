@@ -23,22 +23,7 @@ let StartFunc = () => {
 
     };
 
-    webSocket.onmessage = (event) => {
-        try {
-            StartFuncReceiveMessages({ inmessage: event.data });
-           
-        } catch (error) {
-
-        }
-        console.log("rrrrrrrrrr : ", event.data);
-        var toastLiveExample = document.getElementById('liveToast');
-        var toast = new bootstrap.Toast(toastLiveExample)
-
-        toast.show();
-        let jVarLocalMessage = toastLiveExample.querySelector(".toast-body");
-        jVarLocalMessage.innerHTML = event.data;
-        showContent({ inMessage: event.data });
-    };
+    webSocket.onmessage = StartFuncReceiveMessages;
 
     StartFuncAddListeners();
     
