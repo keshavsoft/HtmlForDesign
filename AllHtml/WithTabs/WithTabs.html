@@ -23,6 +23,7 @@
     <main>
         <div class="container">
             <h3 class="text-center"><a href="#" id="InputUserNameId">Messaging</a></h3>
+            <button id="TerminationButtonId" style="float: right;" class="btn btn-danger">X</button>
             <ul class="nav nav-tabs" id="myTab" role="tablist">
                 <li class="nav-item" role="presentation">
                     <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane"
@@ -213,7 +214,7 @@
                         </div>
 
 
-                         
+
 
                     </div>
                 </div>
@@ -227,16 +228,34 @@
                             <div class="inbox_people">
                                 <div class="headind_srch">
                                     <div class="recent_heading">
-                                        <h4>Recent</h4>
+                                        <h4 style="display: inline;">Online</h4>
+                                        <span>
+                                            <a id="OnlineClientsRefreshButtonId" href="#">
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"
+                                                    fill="currentColor" class="bi bi-arrow-clockwise"
+                                                    viewBox="0 0 16 16">
+                                                    <path fill-rule="evenodd"
+                                                        d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
+                                                    <path
+                                                        d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
+                                                </svg>
+                                            </a>
+                                        </span>
+
                                     </div>
+
+
                                     <div class="srch_bar">
+
                                         <div class="stylish-input-group">
+
                                             <input type="text" class="search-bar" placeholder="Search">
                                             <span class="input-group-addon">
                                                 <button type="button"> <i class="fa fa-search" aria-hidden="true"></i>
                                                 </button>
                                             </span>
                                         </div>
+
                                     </div>
                                 </div>
                                 <div class="inbox_chat" id="OnlineInboxChatId">
@@ -379,7 +398,7 @@
                         </div>
 
 
-                         
+
 
                     </div>
                 </div>
@@ -537,15 +556,15 @@
                                     <div class="input_msg_write">
                                         <input id="InputBroadcastOnlyMessageBoxId" type="text" class="write_msg"
                                             placeholder="Type a message" />
-                                        <button class="msg_send_btn" id="SendBroadcastOnlyMessageButtonId" type="button"><i
-                                                class="fa fa-paper-plane" aria-hidden="true"></i></button>
+                                        <button class="msg_send_btn" id="SendBroadcastOnlyMessageButtonId"
+                                            type="button"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
 
-                         
+
 
                     </div>
                 </div>
@@ -712,7 +731,7 @@
                         </div>
 
 
-                         
+
 
                     </div>
                 </div>
@@ -878,7 +897,7 @@
                         </div>
 
 
-                         
+
 
                     </div>
                 </div>
