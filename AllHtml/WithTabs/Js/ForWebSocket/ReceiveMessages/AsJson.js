@@ -14,7 +14,7 @@ let StartFunc = ({ inJsonData }) => {
         });
     }
 
-    if (inJsonData.MessageType === "OnlineClients") {
+    if (inJsonData.MessageType === "RefreshOnlineClients") {
         let jVarLocalJsonData = inJsonData.JsonData;
         let jVarLocalInboxId = document.getElementById("OnlineInboxChatId");
         jVarLocalInboxId.innerHTML = "";
@@ -35,7 +35,6 @@ let StartFunc = ({ inJsonData }) => {
 
     if (inJsonData.MessageType === "PrivateMessage") {
         let jVarLocalJsonData = inJsonData.JsonData;
-        console.log("data",jVarLocalJsonData);
         showMessageContent({ inMessage: JSON.stringify(jVarLocalJsonData)});
     }
 

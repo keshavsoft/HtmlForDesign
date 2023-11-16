@@ -13,7 +13,7 @@ let jVarLocalPrivateMessage = ({ inmessage }) => {
     let LocalObjectToSend = {};
     LocalObjectToSend.Type = "PrivateMessage";
     LocalObjectToSend.Receiver = jVarLocalReceiver;
-    LocalObjectToSend.Message = inmessage;
+    LocalObjectToSend.Message = jVarLocalMessage.split(':')[1].trim();
     webSocket.send(JSON.stringify(LocalObjectToSend));
 }
 
