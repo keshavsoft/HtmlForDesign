@@ -1,4 +1,5 @@
 import { StartFunc as StartFuncClientLinkClass } from "./ClientLinkClass/1-ClickAssign.js";
+import { StartFunc as StartFuncSendPrivateTabMessageButtonClass } from "../../AddListeners/SendMessagePrivateTabButtonClass/1-ClickAssign.js";
 
 let StartFunc = ({ inJsonData }) => {
 
@@ -41,6 +42,17 @@ let StartFunc = ({ inJsonData }) => {
         showMessageContent({ inMessage: JSON.stringify(jVarLocalJsonData)});
     }
 
+    if (inJsonData.MessageType === "PrivateTab") {
+        let jVarLocalJsonData = inJsonData.JsonData;
+        showNewTabContent({ inMessage: jVarLocalJsonData.TabName });
+        StartFuncSendPrivateTabMessageButtonClass({ inTabName: jVarLocalJsonData.TabName });
+    }
+
+    if (inJsonData.MessageType === "PrivateTabMessage") {
+        let jVarLocalJsonData = inJsonData.JsonData;
+        showMessageContent({ inMessage: JSON.stringify(jVarLocalJsonData)});
+    }
+
 };
 
 function showContent({ inMessage }) {
@@ -75,6 +87,22 @@ function showMessageContent({ inMessage }) {
     let jVarLocalMessageHistoryId = document.getElementById("MessageHistoryId");
 
     jVarLocalMessageHistoryId.appendChild(clon);
+};
+
+function showNewTabContent({ inMessage }) {
+    console.log("j", inMessage);
+    let temptab = document.getElementById("PrivateTabId");
+    let clontab = temptab.content.cloneNode(true);
+    let TabName = clontab.getElementById("private-tab");
+    TabName.innerHTML = inMessage;
+    let jVarLocalmyTabId = document.getElementById("myTab");
+    jVarLocalmyTabId.appendChild(clontab);
+
+    let temp = document.getElementById("PrivateChatId");
+    let clon = temp.content.cloneNode(true);
+    let jVarLocalTabPaneId = document.getElementById("myTabContent");
+    jVarLocalTabPaneId.appendChild(clon);
+
 };
 
 export { StartFunc };

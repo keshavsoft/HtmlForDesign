@@ -2,6 +2,7 @@ import { StartFunc as StartFuncAddListeners } from "./AddListeners/StartFunc.js"
 import { StartFunc as StartFuncReceiveMessages } from "./ForWebSocket/ReceiveMessages/EntryFile.js";
 
 let jVarLocalWsUrlLocal = "ws://localhost:3000";
+let jVarLocalWsUrlLocal1 = "ws://localhost:4119";
 let jVarLocalWsUrl = "ws://tallyws12.keshavsoft.net/";
 let jVarLocalWsUrl1 = "ws://washtex7.keshavsoft.net";
 
@@ -10,7 +11,7 @@ let jVarLocalWsUrlhttps = "wss://tallyws12.keshavsoft.net/";
 let jVarCommonBmm = "wss://bmmwdo.org/";
 let StartFunc = () => {
 
-    webSocket = new WebSocket(jVarLocalWsUrlLocal);
+    webSocket = new WebSocket(jVarLocalWsUrlLocal1);
 
     webSocket.onopen = (event) => {
         webSocket.send("k1");

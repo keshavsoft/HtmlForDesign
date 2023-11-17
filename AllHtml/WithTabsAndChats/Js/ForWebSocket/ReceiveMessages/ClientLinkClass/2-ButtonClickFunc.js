@@ -1,23 +1,14 @@
 let StartFunc = ({ inTabName }) => {
-    showNewTabContent({ inTabName });
+    jVarLocalOpenPrivateTab({ inmessage : inTabName });
 
 };
 
-function showNewTabContent({ inTabName }) {
-    console.log("j", inTabName);
-    let temptab = document.getElementById("PrivateTabId");
-    let clontab = temptab.content.cloneNode(true);
-    let TabName = clontab.getElementById("private-tab");
-    TabName.innerHTML = inTabName;
-    let jVarLocalmyTabId = document.getElementById("myTab");
-    jVarLocalmyTabId.appendChild(clontab);
+let jVarLocalOpenPrivateTab = ({ inmessage }) => {
 
-    let temp = document.getElementById("PrivateChatId");
-    let clon = temp.content.cloneNode(true);
-    let jVarLocalTabPaneId = document.getElementById("myTabContent");
-    jVarLocalTabPaneId.appendChild(clon);
-
-};
-
+    let LocalObjectToSend = {};
+    LocalObjectToSend.Type = "PrivateTab";
+    LocalObjectToSend.TabName = inmessage;
+    webSocket.send(JSON.stringify(LocalObjectToSend));
+}
 
 export { StartFunc };

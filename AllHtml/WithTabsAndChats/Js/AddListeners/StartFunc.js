@@ -14,7 +14,7 @@ let StartFunc = () => {
     StartFuncSendPrivateMessageButtonId();
     StartFuncTerminationButtonId();
     StartFuncOnlineClientsRefreshButtonId();
-    
+
 };
 
 export { StartFunc };
